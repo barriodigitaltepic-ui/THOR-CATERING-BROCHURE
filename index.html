@@ -1101,6 +1101,77 @@ footer p{
     .language-switch{padding:7px 10px;font-size:9px;}
 }
 
+
+
+/* =========================
+   AJUSTES VISUALES SIN CAMBIAR LA IDENTIDAD THOR
+   Alineación con los acabados de la versión en inglés
+========================= */
+.btn,
+.quote-menu-btn,
+.whatsapp-submit {
+    border-radius: 999px;
+    transition: background .25s ease, color .25s ease, transform .25s ease, filter .25s ease;
+}
+
+.btn:hover,
+.quote-menu-btn:hover {
+    transform: translateY(-2px);
+}
+
+.service,
+.extra-box,
+.menu-notice,
+.menu-panel,
+.bar-card,
+.contact-card,
+.modal-card,
+.selected-menu,
+.summary,
+.info-note {
+    border-radius: 16px;
+}
+
+.luxury-gallery-item {
+    border-radius: 12px;
+}
+
+.luxury-gallery-item:focus-visible,
+.btn:focus-visible,
+.menu-tab:focus-visible,
+.language-switch:focus-visible,
+.gallery-lightbox-close:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 4px;
+}
+
+/* La galería sigue el formato de la versión inglesa: 4 columnas en escritorio. */
+.luxury-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+@media (max-width: 768px) {
+    .luxury-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .luxury-gallery-item,
+    .luxury-gallery-item img {
+        min-height: 150px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
 </style>
 </head>
 
