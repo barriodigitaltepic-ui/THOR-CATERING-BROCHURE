@@ -1213,7 +1213,36 @@ footer p{
         max-width: 100%;
         height: 190px;
     }
-}    
+}
+    
+
+/* Fotografías dentro de los botones de menú */
+.menu-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.menu-tab span {
+    text-align: left;
+}
+
+.menu-tab-photo {
+    display: block;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+@media (max-width: 560px) {
+    .menu-tab-photo {
+        width: 32px;
+        height: 32px;
+    }
+}
 
 </style>
 </head>
@@ -1460,117 +1489,68 @@ footer p{
 
         </div>
 
-
+         
 <!-- PESTAÑAS Y FOTOGRAFÍAS DE LOS MENÚS -->
 
 <div class="menu-tabs reveal">
 
-    <!-- CANAPÉS -->
-    <div class="menu-tab-group">
+    <button class="menu-tab active" type="button"
+            onclick="showMenu('canapes',this)">
+        <span>Canapés</span>
+        <img class="menu-tab-photo"
+             src="images/menu-canapes.jpg"
+             alt="Canapés"
+             loading="lazy"
+             onerror="this.style.display='none'"
+             onclick="event.stopPropagation(); openGalleryImage(this.parentElement)">
+    </button>
 
-        <button class="menu-tab active"
-                type="button"
-                onclick="showMenu('canapes',this)">
-            Canapés
-        </button>
+    <button class="menu-tab" type="button"
+            onclick="showMenu('italiano',this)">
+        <span>Auténtico Italiano</span>
+        <img class="menu-tab-photo"
+             src="images/menu-italiano.jpg"
+             alt="Auténtico Italiano"
+             loading="lazy"
+             onerror="this.style.display='none'"
+             onclick="event.stopPropagation(); openGalleryImage(this.parentElement)">
+    </button>
 
-        <button class="menu-photo"
-                type="button"
-                onclick="openGalleryImage(this)"
-                aria-label="Ampliar fotografía de Canapés">
-            <img src="images/menu-canapes.jpg"
-                 alt="Selección gourmet de canapés"
-                 loading="lazy">
-        </button>
+    <button class="menu-tab" type="button"
+            onclick="showMenu('grill',this)">
+        <span>Grill Churrasquería</span>
+        <img class="menu-tab-photo"
+             src="images/menu-churrasqueria.jpg"
+             alt="Grill Churrasquería"
+             loading="lazy"
+             onerror="this.style.display='none'"
+             onclick="event.stopPropagation(); openGalleryImage(this.parentElement)">
+    </button>
 
-    </div>
+    <button class="menu-tab" type="button"
+            onclick="showMenu('mexicano',this)">
+        <span>Fiesta Mexicana</span>
+        <img class="menu-tab-photo"
+             src="images/menu-mexicano.jpg"
+             alt="Fiesta Mexicana"
+             loading="lazy"
+             onerror="this.style.display='none'"
+             onclick="event.stopPropagation(); openGalleryImage(this.parentElement)">
+    </button>
 
-
-    <!-- AUTÉNTICO ITALIANO -->
-    <div class="menu-tab-group">
-
-        <button class="menu-tab"
-                type="button"
-                onclick="showMenu('italiano',this)">
-            Auténtico Italiano
-        </button>
-
-        <button class="menu-photo"
-                type="button"
-                onclick="openGalleryImage(this)"
-                aria-label="Ampliar fotografía del menú Italiano">
-            <img src="images/menu-italiano.jpg"
-                 alt="Especialidades de cocina italiana"
-                 loading="lazy">
-        </button>
-
-    </div>
-
-
-    <!-- GRILL CHURRASQUERÍA -->
-    <div class="menu-tab-group">
-
-        <button class="menu-tab"
-                type="button"
-                onclick="showMenu('grill',this)">
-            Grill Churrasquería
-        </button>
-
-        <button class="menu-photo"
-                type="button"
-                onclick="openGalleryImage(this)"
-                aria-label="Ampliar fotografía de Grill Churrasquería">
-            <img src="images/menu-churrasqueria.jpg"
-                 alt="Cortes de carne a la parrilla"
-                 loading="lazy">
-        </button>
-
-    </div>
-
-
-    <!-- FIESTA MEXICANA -->
-    <div class="menu-tab-group">
-
-        <button class="menu-tab"
-                type="button"
-                onclick="showMenu('mexicano',this)">
-            Fiesta Mexicana
-        </button>
-
-        <button class="menu-photo"
-                type="button"
-                onclick="openGalleryImage(this)"
-                aria-label="Ampliar fotografía de Fiesta Mexicana">
-            <img src="images/menu-mexicano.jpg"
-                 alt="Gastronomía mexicana para eventos"
-                 loading="lazy">
-        </button>
-
-    </div>
-
-
-    <!-- TEXAS BBQ -->
-    <div class="menu-tab-group">
-
-        <button class="menu-tab"
-                type="button"
-                onclick="showMenu('bbq',this)">
-            Texas BBQ
-        </button>
-
-        <button class="menu-photo"
-                type="button"
-                onclick="openGalleryImage(this)"
-                aria-label="Ampliar fotografía de Texas BBQ">
-            <img src="images/menu-bbq.jpg"
-                 alt="Especialidades de BBQ estilo Texas"
-                 loading="lazy">
-        </button>
-
-    </div>
+    <button class="menu-tab" type="button"
+            onclick="showMenu('bbq',this)">
+        <span>Texas BBQ</span>
+        <img class="menu-tab-photo"
+             src="images/menu-bbq.jpg"
+             alt="Texas BBQ"
+             loading="lazy"
+             onerror="this.style.display='none'"
+             onclick="event.stopPropagation(); openGalleryImage(this.parentElement)">
+    </button>
 
 </div>
-```
+
 
 
         <!-- CANAPÉS -->
