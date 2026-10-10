@@ -909,9 +909,19 @@ footer p{
         height:65px;
     }
 
-    .nav-links{
-        display:none;
-    }
+   .nav-links{
+    display:flex;
+    gap:12px;
+}
+
+.nav-links li:not(:last-child){
+    display:none;
+}
+
+.nav-links a{
+    font-size:9px;
+    letter-spacing:1px;
+} 
 
     .hero{
         padding:90px 20px 50px;
