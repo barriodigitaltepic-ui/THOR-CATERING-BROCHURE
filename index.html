@@ -1172,6 +1172,49 @@ footer p{
     }
 }
 
+/* =========================
+   FOTOGRAFÍAS DE LOS MENÚS THOR
+========================= */
+
+.menu-photo {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: 190px;
+    margin: 22px 0 30px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    cursor: zoom-in;
+}
+
+.menu-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s ease, filter .45s ease;
+}
+
+.menu-photo:hover img {
+    transform: scale(1.05);
+    filter: brightness(.85);
+}
+
+.menu-photo:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 4px;
+}
+
+@media(max-width:560px) {
+    .menu-photo {
+        max-width: 100%;
+        height: 190px;
+    }
+}    
+
 </style>
 </head>
 
@@ -1418,34 +1461,116 @@ footer p{
         </div>
 
 
-        <div class="menu-tabs reveal">
+<!-- PESTAÑAS Y FOTOGRAFÍAS DE LOS MENÚS -->
 
-            <button class="menu-tab active"
-                    onclick="showMenu('canapes',this)">
-                Canapés
-            </button>
+<div class="menu-tabs reveal">
 
-            <button class="menu-tab"
-                    onclick="showMenu('italiano',this)">
-                Auténtico Italiano
-            </button>
+    <!-- CANAPÉS -->
+    <div class="menu-tab-group">
 
-            <button class="menu-tab"
-                    onclick="showMenu('grill',this)">
-                Grill Churrasquería
-            </button>
+        <button class="menu-tab active"
+                type="button"
+                onclick="showMenu('canapes',this)">
+            Canapés
+        </button>
 
-            <button class="menu-tab"
-                    onclick="showMenu('mexicano',this)">
-                Fiesta Mexicana
-            </button>
+        <button class="menu-photo"
+                type="button"
+                onclick="openGalleryImage(this)"
+                aria-label="Ampliar fotografía de Canapés">
+            <img src="images/menu-canapes.jpg"
+                 alt="Selección gourmet de canapés"
+                 loading="lazy">
+        </button>
 
-            <button class="menu-tab"
-                    onclick="showMenu('bbq',this)">
-                Texas BBQ
-            </button>
+    </div>
 
-        </div>
+
+    <!-- AUTÉNTICO ITALIANO -->
+    <div class="menu-tab-group">
+
+        <button class="menu-tab"
+                type="button"
+                onclick="showMenu('italiano',this)">
+            Auténtico Italiano
+        </button>
+
+        <button class="menu-photo"
+                type="button"
+                onclick="openGalleryImage(this)"
+                aria-label="Ampliar fotografía del menú Italiano">
+            <img src="images/menu-italiano.jpg"
+                 alt="Especialidades de cocina italiana"
+                 loading="lazy">
+        </button>
+
+    </div>
+
+
+    <!-- GRILL CHURRASQUERÍA -->
+    <div class="menu-tab-group">
+
+        <button class="menu-tab"
+                type="button"
+                onclick="showMenu('grill',this)">
+            Grill Churrasquería
+        </button>
+
+        <button class="menu-photo"
+                type="button"
+                onclick="openGalleryImage(this)"
+                aria-label="Ampliar fotografía de Grill Churrasquería">
+            <img src="images/menu-churrasqueria.jpg"
+                 alt="Cortes de carne a la parrilla"
+                 loading="lazy">
+        </button>
+
+    </div>
+
+
+    <!-- FIESTA MEXICANA -->
+    <div class="menu-tab-group">
+
+        <button class="menu-tab"
+                type="button"
+                onclick="showMenu('mexicano',this)">
+            Fiesta Mexicana
+        </button>
+
+        <button class="menu-photo"
+                type="button"
+                onclick="openGalleryImage(this)"
+                aria-label="Ampliar fotografía de Fiesta Mexicana">
+            <img src="images/menu-mexicano.jpg"
+                 alt="Gastronomía mexicana para eventos"
+                 loading="lazy">
+        </button>
+
+    </div>
+
+
+    <!-- TEXAS BBQ -->
+    <div class="menu-tab-group">
+
+        <button class="menu-tab"
+                type="button"
+                onclick="showMenu('bbq',this)">
+            Texas BBQ
+        </button>
+
+        <button class="menu-photo"
+                type="button"
+                onclick="openGalleryImage(this)"
+                aria-label="Ampliar fotografía de Texas BBQ">
+            <img src="images/menu-bbq.jpg"
+                 alt="Especialidades de BBQ estilo Texas"
+                 loading="lazy">
+        </button>
+
+    </div>
+
+</div>
+```
 
 
         <!-- CANAPÉS -->
