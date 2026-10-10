@@ -700,7 +700,19 @@ footer {
 @media (max-width: 768px) {
   nav { padding: 16px 24px; }
   .nav-logo { font-size: 14px; letter-spacing: .15em; }
-  .nav-links { display: none; }
+  
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+.nav-links li:not(:last-child) {
+  display: none;
+}
+.nav-links a {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
   section { padding: 72px 24px; }
   .hero { padding: 100px 24px 72px; }
   .hero-title { letter-spacing: .08em; }
