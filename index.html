@@ -1,93 +1,2433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thor Catering Events — Brochure</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --carbon:#2F3A2A;
+    --dark:#38442F;
+    --graphite:#56613F;
+    --gold:#C9A84C;
+    --gold-light:#E8D39A;
+    --gold-soft:#D4B25E;
+    --cream:#F3E2B3;
+    --white:#FAF7EF;
+    --surface:#435036;
+    --line:rgba(232,211,154,.22);
+    --shadow:rgba(0,0,0,.38);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+        radial-gradient(circle at 20% 10%, rgba(201,168,76,.08), transparent 30%),
+        radial-gradient(circle at 80% 40%, rgba(232,211,154,.05), transparent 30%),
+        linear-gradient(135deg,#273020,#38442F 45%,#293322);
+    color:var(--cream);
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.035;
+    background-image:
+        linear-gradient(45deg,#fff 1px,transparent 1px),
+        linear-gradient(-45deg,#fff 1px,transparent 1px);
+    background-size:70px 70px;
+    z-index:-1;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    background:rgba(39,48,32,.92);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(16px);
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    letter-spacing:4px;
+    color:var(--gold-light);
+    font-weight:600;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--cream);
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold-light);
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:110px 7%;
+    position:relative;
+}
+
+.container{
+    max-width:1250px;
+    margin:auto;
+}
+
+.kicker{
+    color:var(--gold-light);
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(42px,6vw,72px);
+    line-height:.95;
+    font-weight:500;
+    color:var(--white);
+    margin-bottom:25px;
+}
+
+.section-title span{
+    color:var(--gold-light);
+}
+
+.section-line{
+    width:70px;
+    height:1px;
+    background:var(--gold);
+    margin:25px 0;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding-top:100px;
+    background:
+        radial-gradient(circle at center,rgba(201,168,76,.13),transparent 35%),
+        linear-gradient(rgba(25,31,22,.25),rgba(25,31,22,.55));
+}
+
+.hero-inner{
+    max-width:1000px;
+}
+
+.hero-kicker{
+    color:var(--gold-light);
+    letter-spacing:7px;
+    text-transform:uppercase;
+    font-size:12px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(75px,14vw,170px);
+    line-height:.72;
+    letter-spacing:7px;
+    color:var(--white);
+}
+
+.hero h1 span{
+    display:block;
+    color:var(--gold-light);
+    font-size:.48em;
+    letter-spacing:10px;
+    margin-top:25px;
+}
+
+.hero-sub{
+    margin-top:35px;
+    font-size:14px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#dfd2aa;
+}
+
+.hero-location{
+    margin-top:10px;
+    color:#bfb58f;
+    font-size:13px;
+}
+
+.hero-actions{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:45px;
+}
+
+.btn{
+    border:1px solid var(--gold);
+    padding:14px 28px;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.3s;
+    background:transparent;
+    color:var(--cream);
+}
+
+.btn:hover{
+    background:var(--gold);
+    color:#222;
+}
+
+.btn-gold{
+    background:linear-gradient(135deg,#C9A84C,#E8D39A);
+    color:#252a20;
+    border-color:var(--gold-light);
+    font-weight:500;
+}
+
+.scroll{
+    margin-top:70px;
+    font-size:10px;
+    letter-spacing:4px;
+    color:#aaa47f;
+}
+
+/* =========================
+   NOSOTROS
+========================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:80px;
+    align-items:start;
+}
+
+.about-text{
+    max-width:750px;
+    color:#ddd3ae;
+    font-size:16px;
+}
+
+.about-text p + p{
+    margin-top:20px;
+}
+
+/* =========================
+   SERVICIOS
+========================= */
+
+.services{
+    background:rgba(20,25,18,.16);
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-top:60px;
+}
+
+.service{
+    padding:40px;
+    border:1px solid var(--line);
+    background:rgba(67,80,54,.42);
+    transition:.4s;
+}
+
+.service:hover{
+    transform:translateY(-5px);
+    border-color:rgba(232,211,154,.5);
+}
+
+.service-number{
+    color:var(--gold);
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+}
+
+.service h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
+    font-weight:500;
+    color:var(--white);
+    margin:10px 0 15px;
+}
+
+.service p{
+    color:#d4ca9f;
+}
+
+.extra-box{
+    margin-top:25px;
+    padding:35px;
+    border-left:2px solid var(--gold);
+    background:rgba(0,0,0,.14);
+}
+
+.extra-box strong{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold-light);
+    font-size:27px;
+    margin-bottom:8px;
+}
+
+/* =========================
+   MENUS
+========================= */
+
+.menu-intro{
+    max-width:760px;
+    color:#d3c9a1;
+}
+
+.menu-notice{
+    border:1px solid var(--line);
+    padding:25px;
+    margin:35px 0;
+    background:rgba(67,80,54,.32);
+}
+
+.menu-notice strong{
+    color:var(--gold-light);
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    display:block;
+    margin-bottom:6px;
+}
+
+.menu-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:45px 0 25px;
+}
+
+.menu-tab{
+    border:1px solid var(--line);
+    background:transparent;
+    color:#d8ceaa;
+    padding:12px 20px;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.menu-tab:hover,
+.menu-tab.active{
+    background:var(--gold);
+    color:#252a20;
+    border-color:var(--gold);
+}
+
+.menu-panel{
+    display:none;
+    border:1px solid var(--line);
+    background:
+        linear-gradient(145deg,rgba(67,80,54,.75),rgba(38,47,31,.9));
+    padding:45px;
+    box-shadow:0 25px 70px rgba(0,0,0,.18);
+}
+
+.menu-panel.active{
+    display:block;
+    animation:fadeIn .45s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.menu-panel h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px;
+    color:var(--gold-light);
+    font-weight:500;
+}
+
+.menu-category{
+    margin-top:35px;
+}
+
+.menu-category-title{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--white);
+    font-size:29px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:10px;
+    margin-bottom:8px;
+}
+
+.menu-item{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:3px;
+    padding:14px 0;
+    border-bottom:1px solid rgba(232,211,154,.09);
+}
+
+.menu-item-name{
+    color:#eee4bd;
+    font-size:21px;
+    font-weight:600;
+}
+
+.menu-item-description{
+    color:#aaa889;
+    font-size:13px;
+}
+
+.menu-price{
+    margin-top:35px;
+    display:inline-block;
+    padding:13px 22px;
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.menu-note{
+    margin-top:18px;
+    color:#aaa889;
+    font-size:12px;
+    font-style:italic;
+}
+
+.quote-menu-btn{
+    margin-top:35px;
+    width:100%;
+}
+
+/* =========================
+   BAR
+========================= */
+
+.bar-section{
+    background:rgba(19,24,17,.25);
+}
+
+.bar-description{
+    max-width:750px;
+    color:#d4cba7;
+}
+
+.bar-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-top:55px;
+}
+
+.bar-card{
+    border:1px solid var(--line);
+    background:rgba(67,80,54,.5);
+    padding:40px;
+    position:relative;
+}
+
+.bar-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.bar-card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:40px;
+    color:var(--gold-light);
+}
+
+.bar-subtitle{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    color:#a9a07d;
+    font-size:10px;
+    margin:8px 0 25px;
+}
+
+.bar-rate{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(232,211,154,.1);
+    padding:12px 0;
+}
+
+.bar-rate span:last-child{
+    color:var(--gold-light);
+}
+
+.brand-list{
+    margin-top:25px;
+    color:#c5bc96;
+    font-size:13px;
+}
+
+.bar-card .quote-menu-btn{
+    margin-top:30px;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact-card{
+    max-width:900px;
+    margin:45px auto 0;
+    border:1px solid var(--line);
+    padding:60px 35px;
+    background:
+        radial-gradient(circle at center,rgba(201,168,76,.08),transparent 55%),
+        rgba(67,80,54,.42);
+}
+
+.contact-card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:52px;
+    color:var(--white);
+    font-weight:500;
+}
+
+.contact-card p{
+    max-width:650px;
+    margin:15px auto;
+    color:#cfc5a0;
+}
+
+.contact-details{
+    margin:30px 0;
+    color:var(--gold-light);
+    letter-spacing:1px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:45px 7%;
+    text-align:center;
+    background:#252e20;
+}
+
+.footer-logo{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold-light);
+    font-size:30px;
+    letter-spacing:4px;
+}
+
+footer p{
+    color:#989274;
+    font-size:12px;
+    margin-top:7px;
+}
+
+/* =========================
+   MODAL COTIZACIÓN
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(10,13,9,.84);
+    backdrop-filter:blur(10px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    z-index:3000;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-card{
+    width:min(950px,100%);
+    max-height:92vh;
+    overflow-y:auto;
+    background:
+        linear-gradient(145deg,#435036,#283121);
+    border:1px solid rgba(232,211,154,.38);
+    box-shadow:0 30px 100px rgba(0,0,0,.6);
+    padding:45px;
+    position:relative;
+}
+
+.modal-close{
+    position:absolute;
+    top:16px;
+    right:18px;
+    border:0;
+    background:none;
+    color:var(--gold-light);
+    font-size:32px;
+    line-height:1;
+}
+
+.modal-kicker{
+    color:var(--gold-light);
+    letter-spacing:4px;
+    font-size:10px;
+    text-transform:uppercase;
+}
+
+.modal-card h2{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--white);
+    font-size:52px;
+    font-weight:500;
+    line-height:1;
+    margin:8px 0 12px;
+}
+
+.modal-description{
+    color:#c8bf9c;
+    font-size:13px;
+    margin-bottom:30px;
+}
+
+.form-section{
+    border-top:1px solid var(--line);
+    padding-top:25px;
+    margin-top:30px;
+}
+
+.form-section h3{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold-light);
+    font-size:30px;
+    font-weight:500;
+    margin-bottom:18px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    color:#d5ccaa;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid rgba(232,211,154,.22);
+    background:rgba(20,26,17,.48);
+    color:#f1e7c1;
+    padding:13px 14px;
+    outline:none;
+    border-radius:0;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:var(--gold);
+}
+
+.field textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.field select option{
+    background:#303b28;
+    color:white;
+}
+
+.selected-menu{
+    padding:18px;
+    border:1px solid var(--gold);
+    background:rgba(201,168,76,.07);
+    margin-bottom:25px;
+}
+
+.selected-menu small{
+    display:block;
+    color:#aaa889;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:9px;
+}
+
+.selected-menu strong{
+    display:block;
+    color:var(--gold-light);
+    font-family:'Cormorant Garamond',serif;
+    font-size:29px;
+    font-weight:500;
+    margin-top:2px;
+}
+
+.info-note{
+    margin-top:20px;
+    border-left:2px solid var(--gold);
+    padding:17px 18px;
+    background:rgba(0,0,0,.13);
+    color:#cfc5a2;
+    font-size:12px;
+}
+
+.info-note strong{
+    color:var(--gold-light);
+}
+
+.bar-toggle{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    border:1px solid var(--line);
+    padding:17px;
+    background:rgba(0,0,0,.12);
+}
+
+.bar-toggle input{
+    width:18px;
+    height:18px;
+    accent-color:var(--gold);
+}
+
+.bar-toggle label{
+    color:#eee4bd;
+    font-size:13px;
+}
+
+.hidden{
+    display:none;
+}
+
+.summary{
+    margin-top:25px;
+    padding:20px;
+    border:1px solid var(--line);
+    background:rgba(0,0,0,.15);
+}
+
+.summary-title{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold-light);
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.summary-content{
+    color:#c8bf9e;
+    font-size:13px;
+    white-space:pre-line;
+}
+
+.whatsapp-submit{
+    width:100%;
+    margin-top:25px;
+    border:1px solid #d9c778;
+    background:linear-gradient(135deg,#C9A84C,#E8D39A);
+    color:#252a20;
+    padding:17px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.whatsapp-submit:hover{
+    filter:brightness(1.08);
+}
+
+.required{
+    color:var(--gold-light);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    .nav{
+        padding:0 20px;
+    }
+
+    .nav-links{
+        gap:12px;
+    }
+
+    .nav-links a{
+        font-size:9px;
+        letter-spacing:1px;
+    }
+
+    .logo{
+        font-size:18px;
+        letter-spacing:2px;
+    }
+
+    section{
+        padding:80px 5%;
+    }
+
+    .about-grid,
+    .services-grid,
+    .bar-grid{
+        grid-template-columns:1fr;
+    }
+
+    .menu-panel{
+        padding:25px;
+    }
+
+    .modal-card{
+        padding:30px 20px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .modal-card h2{
+        font-size:43px;
+    }
+}
+
+@media(max-width:560px){
+
+    .nav{
+        height:65px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding:90px 20px 50px;
+    }
+
+    .hero h1{
+        font-size:70px;
+        letter-spacing:3px;
+    }
+
+    .hero h1 span{
+        letter-spacing:5px;
+    }
+
+    .hero-sub{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
+    .section-title{
+        font-size:48px;
+    }
+
+    .service,
+    .bar-card{
+        padding:27px;
+    }
+
+    .contact-card{
+        padding:45px 20px;
+    }
+
+    .contact-card h3{
+        font-size:42px;
+    }
+
+    .menu-tabs{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .menu-tab{
+        padding:10px 8px;
+        font-size:9px;
+    }
+
+    .modal{
+        padding:10px;
+    }
+
+    .modal-card{
+        max-height:96vh;
+        padding:28px 17px;
+    }
+}
+
+
+
+/* =========================
+   GALERÍA THOR
+========================= */
+.gallery-section{
+    background:rgba(20,25,18,.16);
+}
+.luxury-gallery{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    margin-top:45px;
+}
+.luxury-gallery-item{
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--surface);
+    padding:0;
+    cursor:zoom-in;
+    min-height:220px;
+    aspect-ratio:4/3;
+}
+.luxury-gallery-item::after{
+    content:'+';
+    position:absolute;
+    right:15px;
+    bottom:12px;
+    width:34px;
+    height:34px;
+    display:grid;
+    place-items:center;
+    color:var(--gold-light);
+    background:rgba(37,46,32,.82);
+    border:1px solid var(--line);
+    border-radius:50%;
+    font-size:24px;
+    opacity:0;
+    transform:translateY(5px);
+    transition:opacity .3s,transform .3s;
+}
+.luxury-gallery-item img{
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:220px;
+    object-fit:cover;
+    transition:transform .65s ease,filter .65s ease;
+}
+.luxury-gallery-item:hover img{
+    transform:scale(1.06);
+    filter:brightness(.82);
+}
+.luxury-gallery-item:hover::after{
+    opacity:1;
+    transform:translateY(0);
+}
+.gallery-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:5vh 5vw;
+    background:rgba(15,19,13,.94);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .25s,visibility .25s;
+}
+.gallery-lightbox.open{
+    opacity:1;
+    visibility:visible;
+}
+.gallery-lightbox img{
+    display:block;
+    max-width:90vw;
+    max-height:86vh;
+    object-fit:contain;
+    border:1px solid rgba(232,211,154,.35);
+    box-shadow:0 25px 90px rgba(0,0,0,.55);
+}
+.gallery-lightbox-close{
+    position:absolute;
+    top:18px;
+    right:25px;
+    width:48px;
+    height:48px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    color:var(--gold-light);
+    background:rgba(67,80,54,.7);
+    font-size:30px;
+    cursor:pointer;
+}
+@media(max-width:768px){
+    .luxury-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+    .luxury-gallery-item,.luxury-gallery-item img{min-height:150px;}
+    .luxury-gallery-item::after{opacity:1;transform:none;}
+}
+@media(max-width:460px){
+    .luxury-gallery{grid-template-columns:1fr;}
+    .luxury-gallery-item,.luxury-gallery-item img{min-height:220px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAV
+========================= -->
+
+<header class="nav">
+
+    <a href="#inicio" class="logo">
+        THOR
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#menus">Menús</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#bar">Bar</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+</header>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-inner reveal">
+
+        <div class="hero-kicker">
+            Catering & Planeación de Eventos
+        </div>
+
+        <h1>
+            THOR
+            <span>CATERING EVENTS</span>
+        </h1>
+
+        <div class="hero-sub">
+            Puerto Vallarta & Bahía de Banderas
+        </div>
+
+        <div class="hero-location">
+            Catering · Planeación de Eventos
+        </div>
+
+        <div class="hero-actions">
+
+            <a href="#menus" class="btn btn-gold">
+                Explorar menús
+            </a>
+
+            <button class="btn" onclick="openQuote()">
+                WHATSAPP
+            </button>
+
+        </div>
+
+        <div class="scroll">
+            ↓ &nbsp; DESCUBRIR
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NOSOTROS
+========================= -->
+
+<section id="nosotros">
+
+    <div class="container about-grid">
+
+        <div class="reveal">
+
+            <div class="kicker">
+                Thor Catering Events
+            </div>
+
+            <h2 class="section-title">
+                Cada evento,<br>
+                una <span>experiencia única</span>
+            </h2>
+
+            <div class="section-line"></div>
+
+        </div>
+
+        <div class="about-text reveal">
+
+            <p>
+                En Thor Catering Events transformamos momentos especiales
+                en recuerdos inolvidables. Con experiencia en la industria
+                de eventos y gastronomía, ofrecemos un servicio integral
+                que combina planeación impecable, cocina de autor y atención
+                al detalle en cada rincón de tu celebración.
+            </p>
+
+            <p>
+                Operamos en Puerto Vallarta, Jalisco y Bahía de Banderas,
+                Nayarit — uno de los destinos más bellos de México para
+                eventos de destino nacionales e internacionales.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICIOS
+========================= -->
+
+<section id="servicios" class="services">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="kicker">
+                Experiencia integral
+            </div>
+
+            <h2 class="section-title">
+                Lo que hacemos
+            </h2>
+
+        </div>
+
+        <div class="services-grid">
+
+            <article class="service reveal">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <h3>
+                    Catering
+                </h3>
+
+                <p>
+                    Menús elaborados con ingredientes frescos de la región.
+                    Cocina italiana, mexicana contemporánea, parrillada
+                    argentina y canapés. Servicio buffet o family style
+                    con personal profesional incluido.
+                </p>
+
+            </article>
+
+
+            <article class="service reveal">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <h3>
+                    Planeación de Eventos
+                </h3>
+
+                <p>
+                    Organizamos y coordinamos todo tipo de eventos:
+                    bodas, XV años, graduaciones, aniversarios y corporativos.
+                    Desde la primera reunión hasta el último detalle del
+                    gran día, estamos contigo.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <div class="extra-box reveal">
+
+            <strong>
+                Personal profesional incluido
+            </strong>
+
+            Cada evento cuenta con chef, meseros y bartender profesionales.
+            Nos encargamos de todo para que tú y tus invitados solo disfruten.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENUS
+========================= -->
+
+<section id="menus">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="kicker">
+                Gastronomía Thor
+            </div>
+
+            <h2 class="section-title">
+                Nuestra carta<br>
+                de <span>menús</span>
+            </h2>
+
+            <div class="section-line"></div>
+
+            <div class="menu-intro">
+
+                Nos adaptamos a tus preferencias, restricciones alimentarias
+                y presupuesto. Contáctanos y diseñamos juntos el menú perfecto
+                para tu evento.
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-notice reveal">
+
+            <strong>
+                Menús personalizados
+            </strong>
+
+            Cada evento se cotiza de acuerdo con el número de adultos,
+            menores, fecha, ubicación y necesidades particulares del evento.
+
+        </div>
+
+
+        <div class="menu-tabs reveal">
+
+            <button class="menu-tab active"
+                    onclick="showMenu('canapes',this)">
+                Canapés
+            </button>
+
+            <button class="menu-tab"
+                    onclick="showMenu('italiano',this)">
+                Auténtico Italiano
+            </button>
+
+            <button class="menu-tab"
+                    onclick="showMenu('grill',this)">
+                Grill Churrasquería
+            </button>
+
+            <button class="menu-tab"
+                    onclick="showMenu('mexicano',this)">
+                Fiesta Mexicana
+            </button>
+
+            <button class="menu-tab"
+                    onclick="showMenu('bbq',this)">
+                Texas BBQ
+            </button>
+
+        </div>
+
+
+        <!-- CANAPÉS -->
+
+        <article class="menu-panel active" id="canapes">
+
+            <h3>
+                Canapés
+            </h3>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Cold
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Bruschetta de jitomate y albahaca
+                    </div>
+                    <div class="menu-item-description">
+                        Pan tostado, jitomate cherry, albahaca fresca y aceite de oliva extra virgen
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Crostini de queso brie y miel de trufa
+                    </div>
+                    <div class="menu-item-description">
+                        Pan de masa madre, brie, miel negra de trufa y nuez garapiñada
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Tostada de atún sellado
+                    </div>
+                    <div class="menu-item-description">
+                        Tostada artesanal, atún en ajonjolí, mayonesa de wasabi y cebollín
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Hot
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Brocheta de res con chimichurri
+                    </div>
+                    <div class="menu-item-description">
+                        Lomo de res al carbón, pimiento asado y chimichurri verde
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Mini quesadilla de huitlacoche
+                    </div>
+                    <div class="menu-item-description">
+                        Tortilla de maíz azul, huitlacoche, queso Oaxaca y crema de epazote
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Volcán de queso fundido con chorizo
+                    </div>
+                    <div class="menu-item-description">
+                        Queso manchego fundido, chorizo artesanal y totopos de maíz
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-price">
+                A cotizar / pp
+            </div>
+
+            <div class="menu-note">
+                5–7 piezas por persona · servidas en rondas
+            </div>
+
+            <button class="btn btn-gold quote-menu-btn"
+                    onclick="openQuote('Canapés','A cotizar / pp')">
+                WHATSAPP
+            </button>
+
+        </article>
+
+
+        <!-- ITALIANO -->
+
+        <article class="menu-panel" id="italiano">
+
+            <h3>
+                Auténtico Italiano
+            </h3>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Entradas
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Ensalada Caprese
+                    </div>
+                    <div class="menu-item-description">
+                        Jitomate heirloom, mozzarella fresca, albahaca y balsámico
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Ensalada de betabel con queso de cabra
+                    </div>
+                    <div class="menu-item-description">
+                        Betabel asado, queso de cabra, nuez y vinagreta de miel mostaza
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Tártare de res
+                    </div>
+                    <div class="menu-item-description">
+                        Filete picado fino, alcaparras, mostaza Dijon, yema y crostini
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Pastas y proteínas
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Spaghetti al Pesto
+                    </div>
+                    <div class="menu-item-description">
+                        Pasta fresca, pesto genovés de albahaca, piñones tostados y parmesano reggiano
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Rigatoni Ragù
+                    </div>
+                    <div class="menu-item-description">
+                        Ragù lento de res y cerdo, vino tinto y San Marzano
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Pasta Paccheri
+                    </div>
+                    <div class="menu-item-description">
+                        Paccheri con salsa de tomate deshidratado, parmesano reggiano y albahaca fresca
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Proteínas
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Filete de res
+                    </div>
+                    <div class="menu-item-description">
+                        Filete al punto, salsa de vino tinto, mantequilla de hierbas y papas rosti
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Pizza Napolitana
+                    </div>
+                    <div class="menu-item-description">
+                        Masa madre, salsa San Marzano, fior di latte y albahaca fresca
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Camarones al grill
+                    </div>
+                    <div class="menu-item-description">
+                        Camarones jumbo, mantequilla de ajo, limón y perejil
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Vegetales salteados al ajo
+                    </div>
+                    <div class="menu-item-description">
+                        Calabaza, pimiento, espárragos y champiñones salteados en aceite de oliva y ajo
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Postres
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Tiramisú
+                    </div>
+                    <div class="menu-item-description">
+                        Savoiardi, crema de mascarpone, espresso y cacao
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Flan de caramelo
+                    </div>
+                    <div class="menu-item-description">
+                        Flan al baño maría, caramelo dorado y crema chantilly
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-price">
+                $1,254 MXN
+            </div>
+
+            <div class="menu-note">
+                Buffet o Family Style · mínimo 10 personas
+            </div>
+
+            <button class="btn btn-gold quote-menu-btn"
+                    onclick="openQuote('Auténtico Italiano','$1,254 MXN')">
+                WHATSAPP
+            </button>
+
+        </article>
+
+
+        <!-- GRILL -->
+
+        <article class="menu-panel" id="grill">
+
+            <h3>
+                Grill Churrasquería
+            </h3>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Entradas y guarniciones
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Ensalada orgánica del chef
+                    </div>
+                    <div class="menu-item-description">
+                        Hojas verdes, vegetales de temporada y vinagreta de la casa
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Empanadas argentinas
+                    </div>
+                    <div class="menu-item-description">
+                        Masa artesanal horneada, picadillo de res con cebolla y especias
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Vegetales a la parrilla
+                    </div>
+                    <div class="menu-item-description">
+                        Calabaza, pimiento, berenjena y cebolla morada con aceite de oliva
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Puré de papa trufado
+                    </div>
+                    <div class="menu-item-description">
+                        Papa cambray, mantequilla, crema y aceite de trufa negra
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Salsas
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Chimichurri verde y rojo
+                    </div>
+                    <div class="menu-item-description">
+                        Recetas argentinas tradicionales con hierbas frescas
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Salsa criolla
+                    </div>
+                    <div class="menu-item-description">
+                        Jitomate, cebolla morada, pimiento y cilantro
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    De la parrilla a tu plato
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Picaña
+                    </div>
+                    <div class="menu-item-description">
+                        Corte brasileño-argentino, tapa de cuadril con su capa de grasa
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        New York Strip
+                    </div>
+                    <div class="menu-item-description">
+                        Lomo de res prime, mantequilla de ajo y romero
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Pollo a las brasas
+                    </div>
+                    <div class="menu-item-description">
+                        Marinado en hierbas y limón, cocción a las brasas
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Pescado a la parrilla
+                    </div>
+                    <div class="menu-item-description">
+                        Filete del día, aceite de oliva, ajo y hierbas frescas
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Chorizo argentino
+                    </div>
+                    <div class="menu-item-description">
+                        Chorizo artesanal de res y cerdo con pan de campo
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Postres
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Volteado de piña
+                    </div>
+                    <div class="menu-item-description">
+                        Bizcocho, caramelo de piloncillo y piña caramelizada
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Flan de caramelo
+                    </div>
+                    <div class="menu-item-description">
+                        Flan cremoso al baño maría y crema chantilly
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-price">
+                $1,339 MXN
+            </div>
+
+            <div class="menu-note">
+                Buffet o Family Style · mínimo 10 personas
+            </div>
+
+            <button class="btn btn-gold quote-menu-btn"
+                    onclick="openQuote('Grill Churrasquería','$1,339 MXN')">
+                WHATSAPP
+            </button>
+
+        </article>
+
+
+        <!-- MEXICANO -->
+
+        <article class="menu-panel" id="mexicano">
+
+            <h3>
+                Fiesta Mexicana
+            </h3>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Entradas · Mín. 10 personas
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Guacamole y totopos artesanales
+                    </div>
+                    <div class="menu-item-description">
+                        Aguacate fresco, jitomate, chile serrano y limón · totopos de maíz azul y blanco
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Salsa mexicana o molcajete
+                    </div>
+                    <div class="menu-item-description">
+                        Salsa tatemada en molcajete de piedra volcánica
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Ceviche de pescado Nayarit
+                    </div>
+                    <div class="menu-item-description">
+                        Pescado fresco del Pacífico, limón de Colima, jitomate y serrano
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Aguachile de camarón · 2 sabores
+                    </div>
+                    <div class="menu-item-description">
+                        Verde de chile serrano y negro de chile pasilla · camarón de estero
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Salpicón de res
+                    </div>
+                    <div class="menu-item-description">
+                        Res deshebrada, cebolla morada, rábano, cilantro y aguacate
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Platos fuertes
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Mole de pollo
+                    </div>
+                    <div class="menu-item-description">
+                        Mole negro de chiles y especias, ajonjolí tostado y tortillas artesanales
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Pescado zarandeado estilo Nayarit
+                    </div>
+                    <div class="menu-item-description">
+                        Pescado entero en mariposa, adobo de chiles, a las brasas
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Birria de res · Pozole · Enchiladas
+                    </div>
+                    <div class="menu-item-description">
+                        Clásicos jaliscienses con tortillas artesanales
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Tamales oaxaqueños
+                    </div>
+                    <div class="menu-item-description">
+                        Hoja de plátano, masa suave, pollo en mole negro
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Arroz mexicano · Frijoles charros
+                    </div>
+                    <div class="menu-item-description">
+                        Guarniciones tradicionales con epazote y hierbas de olor
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Postres
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Churros · Pan de elote
+                    </div>
+                    <div class="menu-item-description">
+                        Churros con chocolate caliente · Pan de elote con crema y cajeta
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-price">
+                $1,400 MXN
+            </div>
+
+            <div class="menu-note">
+                Mínimo 10 personas · Buffet o Family Style · mínimo 10 personas
+            </div>
+
+            <button class="btn btn-gold quote-menu-btn"
+                    onclick="openQuote('Fiesta Mexicana','$1,400 MXN')">
+                WHATSAPP
+            </button>
+
+        </article>
+
+
+        <!-- TEXAS BBQ -->
+
+        <article class="menu-panel" id="bbq">
+
+            <h3>
+                Texas BBQ
+            </h3>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Ahumados
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Smoked Brisket
+                    </div>
+                    <div class="menu-item-description">
+                        Pecho de res ahumado lentamente, costra de especias y jugosidad incomparable
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Smoked Pork Spare Ribs
+                    </div>
+                    <div class="menu-item-description">
+                        Costillas de cerdo ahumadas, glaseadas con salsa BBQ estilo Texas
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Smoked Pulled Pork
+                    </div>
+                    <div class="menu-item-description">
+                        Cerdo deshebrado ahumado, suave y jugoso, servido con pan artesanal
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Smoked Pulled Chicken
+                    </div>
+                    <div class="menu-item-description">
+                        Pollo deshebrado ahumado, marinado en especias y salsa BBQ
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Acompañamientos
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Ensalada César
+                    </div>
+                    <div class="menu-item-description">
+                        Lechuga romana, aderezo César, crutones y parmesano
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Truffled Mac & Cheese
+                    </div>
+                    <div class="menu-item-description">
+                        Pasta cremosa con mezcla de quesos gratinados al horno y aceite de trufa negra
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Col Slaw Salad
+                    </div>
+                    <div class="menu-item-description">
+                        Ensalada fresca de col, zanahoria y aderezo cremoso
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Puré de papa trufado
+                    </div>
+                    <div class="menu-item-description">
+                        Papa cambray, mantequilla, crema y aceite de trufa negra
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Cebolla y Jalapeño
+                    </div>
+                    <div class="menu-item-description">
+                        Cebolla asada y jalapeños encurtidos, clásicos acompañantes del BBQ texano
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="menu-category">
+
+                <div class="menu-category-title">
+                    Postre
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        Banana Pudding
+                    </div>
+                    <div class="menu-item-description">
+                        Pudín cremoso de vainilla, plátano fresco y galletas Nilla
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="menu-price">
+                $1,250 MXN
+            </div>
+
+            <div class="menu-note">
+                Mínimo 10 personas · Buffet o Family Style
+            </div>
+
+            <button class="btn btn-gold quote-menu-btn"
+                    onclick="openQuote('Texas BBQ','$1,250 MXN')">
+                WHATSAPP
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALERÍA
+========================= -->
+<section id="galeria" class="gallery-section">
+    <div class="container">
+        <div class="kicker reveal">Momentos THOR</div>
+        <h2 class="section-title reveal">Una experiencia <span>para recordar</span></h2>
+        <div class="section-line reveal"></div>
+        <p class="bar-description reveal">Gastronomía, detalles y celebraciones diseñadas para disfrutarse.</p>
+        <div class="luxury-gallery reveal">
+            <button class="luxury-gallery-item" type="button" onclick="openGalleryImage(this)" aria-label="Ampliar fotografía 1"><img src="images/galeria-1.jpg" alt="Experiencia gastronómica THOR" loading="lazy"></button>
+            <button class="luxury-gallery-item" type="button" onclick="openGalleryImage(this)" aria-label="Ampliar fotografía 2"><img src="images/galeria-2.jpg" alt="Montaje de evento THOR" loading="lazy"></button>
+            <button class="luxury-gallery-item" type="button" onclick="openGalleryImage(this)" aria-label="Ampliar fotografía 3"><img src="images/galeria-3.jpg" alt="Detalle de gastronomía THOR" loading="lazy"></button>
+            <button class="luxury-gallery-item" type="button" onclick="openGalleryImage(this)" aria-label="Ampliar fotografía 4"><img src="images/galeria-4.jpg" alt="Presentación culinaria THOR" loading="lazy"></button>
+            <button class="luxury-gallery-item" type="button" onclick="openGalleryImage(this)" aria-label="Ampliar fotografía 5"><img src="images/galeria-5.jpg" alt="Celebración especial THOR" loading="lazy"></button>
+            <button class="luxury-gallery-item" type="button" onclick="openGalleryImage(this)" aria-label="Ampliar fotografía 6"><img src="images/galeria-6.jpg" alt="Servicio de catering THOR" loading="lazy"></button>
+        </div>
+    </div>
+</section>
+
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" onclick="if(event.target === this) closeGalleryImage()">
+    <button class="gallery-lightbox-close" type="button" onclick="closeGalleryImage()" aria-label="Cerrar fotografía">×</button>
+    <img id="galleryExpandedImage" src="" alt="Fotografía ampliada">
+</div>
+
+<!-- =========================
+     OPEN BAR
+========================= -->
+
+<section id="bar" class="bar-section">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="kicker">
+                Barra de eventos
+            </div>
+
+            <h2 class="section-title">
+                Open Bar — <span>Basic & Premium</span>
+            </h2>
+
+            <div class="section-line"></div>
+
+            <div class="bar-description">
+
+                Precios en pesos mexicanos por persona. Incluye bartender
+                profesional, hielo, vasos y garnishes. Chef y meseros
+                incluidos en todos los paquetes.
+
+            </div>
+
+        </div>
+
+
+        <div class="bar-grid">
+
+            <!-- BASIC -->
+
+            <article class="bar-card reveal">
+
+                <h3>
+                    Basic
+                </h3>
+
+                <div class="bar-subtitle">
+                    Open Bar · MXN / pp
+                </div>
+
+                <div class="bar-rate">
+                    <span>1 hora</span>
+                    <span>$450</span>
+                </div>
+
+                <div class="bar-rate">
+                    <span>2 horas</span>
+                    <span>$650</span>
+                </div>
+
+                <div class="bar-rate">
+                    <span>3 horas</span>
+                    <span>$800</span>
+                </div>
+
+                <div class="bar-rate">
+                    <span>4 horas</span>
+                    <span>$1,000</span>
+                </div>
+
+                <div class="bar-rate">
+                    <span>Hora adicional</span>
+                    <span>$300 MXN/pp</span>
+                </div>
+
+                <div class="brand-list">
+                    Altos Plata · Centenario Rep. · 400 Conejos ·
+                    Habana 7 · Bacardí Blanco · Absolut · Beefeater ·
+                    JW Red Label · Makers Mark · Cerveza nacional ·
+                    Vino tinto y blanco · Mixers
+                </div>
+
+                <button class="btn btn-gold quote-menu-btn"
+                        onclick="openBarQuote('Basic')">
+                    WHATSAPP
+                </button>
+
+            </article>
+
+
+            <!-- PREMIUM -->
+
+            <article class="bar-card reveal">
+
+                <h3>
+                    Premium
+                </h3>
+
+                <div class="bar-subtitle">
+                    Premium Brands · MXN / pp
+                </div>
+
+                <div class="bar-rate">
+                    <span>1 hora</span>
+                    <span>$600</span>
+                </div>
+
+                <div class="bar-rate">
+                    <span>2 horas</span>
+                    <span>$800</span>
+                </div>
+
+                <div class="bar-rate">
+                    <span>3 horas</span>
+                    <span>$950</span>
+                </div>
+
+                <div class="bar-rate">
+                    <span>4 horas</span>
+                    <span>$1,150</span>
+                </div>
+
+                <div class="bar-rate">
+                    <span>Hora adicional</span>
+                    <span>$450 MXN/pp</span>
+                </div>
+
+                <div class="brand-list">
+                    Don Julio Blanco · Don Julio Rep. · Don Julio Añejo ·
+                    400 Conejos · Monte Lobos · Appleton VX · Tito's Vodka ·
+                    Bombay Sapphire · Jack Daniel's · JW Black Label ·
+                    Vino tinto y blanco · Mixers
+                </div>
+
+                <button class="btn btn-gold quote-menu-btn"
+                        onclick="openBarQuote('Premium')">
+                    WHATSAPP
+                </button>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section id="contacto" class="contact">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="kicker">
+                Hablemos de tu evento
+            </div>
+
+            <h2 class="section-title">
+                ¿Listo para <span>cotizar?</span>
+            </h2>
+
+        </div>
+
+
+        <div class="contact-card reveal">
+
+            <h3>
+                Hagamos algo extraordinario.
+            </h3>
+
+            <p>
+                Escríbenos por WhatsApp o Instagram y con gusto
+                preparamos una propuesta personalizada para tu evento.
+                Sin compromiso, sin costo.
+            </p>
+
+            <div class="contact-details">
+
+                322 159 9535<br>
+                thorevents26@gmail.com<br>
+                Puerto Vallarta & Bahía de Banderas
+
+            </div>
+
+            <div class="hero-actions">
+
+                <button class="btn btn-gold"
+                        onclick="openQuote()">
+                    WHATSAPP
+                </button>
+
+            </div>
+
+            <p style="margin-top:25px;font-size:12px;">
+                ⏱ Respondemos en menos de 1 hora<br>
+                📋 Cotización lista en 24 horas<br>
+                ✅ Primera consulta sin costo
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        THOR CATERING EVENTS
+    </div>
+
+    <p>
+        Catering & Planeación de Eventos
+    </p>
+
+    <p>
+        Puerto Vallarta · Bahía de Banderas · México ·
+        322 159 9535 · @thorevents.mx
+    </p>
+
+</footer>
+
+
+<script>
+/* =========================
+   MENÚS
+========================= */
+function showMenu(id, btn) {
+    document.querySelectorAll('.menu-panel').forEach(panel => panel.classList.remove('active'));
+    document.querySelectorAll('.menu-tab').forEach(tab => tab.classList.remove('active'));
+    const selected = document.getElementById(id);
+    if (selected) selected.classList.add('active');
+    if (btn) btn.classList.add('active');
+}
 
 /* =========================
    WHATSAPP THOR
 ========================= */
-
 const WHATSAPP_THOR = '523221599535';
 
 function openQuote(menu = '', price = '') {
-
     let message;
-
     if (menu) {
-        message =
-`Hola, requiero información sobre ${menu}. ¿Me das información?`;
-
-        if (price) {
-            message += ` Referencia: ${price}.`;
-        }
+        message = `Hola, requiero información sobre ${menu}. ¿Me das información?`;
+        if (price) message += ` Referencia: ${price}.`;
     } else {
         message = 'Hola, deseo hacer una reservación.';
     }
-
-    const url =
-        'https://wa.me/' +
-        WHATSAPP_THOR +
-        '?text=' +
-        encodeURIComponent(message);
-
+    const url = 'https://wa.me/' + WHATSAPP_THOR + '?text=' + encodeURIComponent(message);
     window.open(url, '_blank', 'noopener,noreferrer');
 }
-
-
-/* =========================
-   OPEN BAR
-========================= */
 
 function openBarQuote(type) {
-
-    const message =
-        `Hola, deseo información sobre el servicio Open Bar ${type}. ¿Me das información?`;
-
-    const url =
-        'https://wa.me/' +
-        WHATSAPP_THOR +
-        '?text=' +
-        encodeURIComponent(message);
-
+    const message = `Hola, deseo información sobre el servicio Open Bar ${type}. ¿Me das información?`;
+    const url = 'https://wa.me/' + WHATSAPP_THOR + '?text=' + encodeURIComponent(message);
     window.open(url, '_blank', 'noopener,noreferrer');
 }
-
 
 /* =========================
    GALERÍA AMPLIABLE
 ========================= */
-
 function openGalleryImage(element) {
-
     const thumbnail = element.querySelector('img');
     const lightbox = document.getElementById('galleryLightbox');
     const expanded = document.getElementById('galleryExpandedImage');
-
     if (!thumbnail || !lightbox || !expanded) return;
-
     expanded.src = thumbnail.src;
     expanded.alt = thumbnail.alt;
-
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
-
     document.body.style.overflow = 'hidden';
 }
 
 function closeGalleryImage() {
-
     const lightbox = document.getElementById('galleryLightbox');
-
+    const expanded = document.getElementById('galleryExpandedImage');
     if (!lightbox) return;
-
     lightbox.classList.remove('open');
     lightbox.setAttribute('aria-hidden', 'true');
-
-    document.getElementById('galleryExpandedImage').src = '';
-
+    if (expanded) expanded.src = '';
     document.body.style.overflow = '';
 }
 
 document.addEventListener('keydown', function(event) {
-
-    if (event.key === 'Escape') {
-        closeGalleryImage();
-    }
-
+    if (event.key === 'Escape') closeGalleryImage();
 });
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* =========================
+   SCROLL NAV
+========================= */
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+</script>
+
+</body>
+</html>
