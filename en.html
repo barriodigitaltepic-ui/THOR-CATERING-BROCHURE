@@ -722,6 +722,39 @@ footer {
     transition-duration: .01ms !important;
   }
 }
+
+/* THOR — Menu photo buttons */
+.menu-tab-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.menu-tab-group .menu-tab {
+    width: 100%;
+}
+
+.menu-tab-group .menu-photo {
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    height: 150px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    cursor: zoom-in;
+}
+
+.menu-tab-group .menu-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}  
 </style>
 </head>
 
@@ -814,13 +847,44 @@ footer {
       </div>
     </div>
 
-    <div class="menu-tabs">
-      <button class="menu-tab active" onclick="showMenu('canapes',this)">🫙 Canapés</button>
-      <button class="menu-tab" onclick="showMenu('italiano',this)">🍕 Auténtico Italiano</button>
-      <button class="menu-tab" onclick="showMenu('churrasco',this)">🥩 Grill Churrasquería</button>
-      <button class="menu-tab" onclick="showMenu('mexicano',this)">🌮 Fiesta Mexicana</button>
-      <button class="menu-tab" onclick="showMenu('bbq',this)">🔥 Texas BBQ</button>
-    </div>
+  <div class="menu-tabs reveal">
+
+  <div class="menu-tab-group">
+    <button class="menu-tab active" onclick="showMenu('canapes',this)">🫙 Canapés</button>
+    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
+      <img src="images/menu-canapes.jpg" alt="Canapés">
+    </button>
+  </div>
+
+  <div class="menu-tab-group">
+    <button class="menu-tab" onclick="showMenu('italiano',this)">🍕 Auténtico Italiano</button>
+    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
+      <img src="images/menu-italiano.jpg" alt="Auténtico Italiano">
+    </button>
+  </div>
+
+  <div class="menu-tab-group">
+    <button class="menu-tab" onclick="showMenu('churrasco',this)">🥩 Grill Churrasquería</button>
+    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
+      <img src="images/menu-churrasqueria.jpg" alt="Grill Churrasquería">
+    </button>
+  </div>
+
+  <div class="menu-tab-group">
+    <button class="menu-tab" onclick="showMenu('mexicano',this)">🌮 Fiesta Mexicana</button>
+    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
+      <img src="images/menu-mexicano.jpg" alt="Fiesta Mexicana">
+    </button>
+  </div>
+
+  <div class="menu-tab-group">
+    <button class="menu-tab" onclick="showMenu('bbq',this)">🔥 Texas BBQ</button>
+    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
+      <img src="images/menu-bbq.jpg" alt="Texas BBQ">
+    </button>
+  </div>
+
+</div>
 
     <!-- CANAPÉS -->
     <div class="menu-panel active" id="panel-canapes">
