@@ -1,0 +1,93 @@
+
+/* =========================
+   WHATSAPP THOR
+========================= */
+
+const WHATSAPP_THOR = '523221599535';
+
+function openQuote(menu = '', price = '') {
+
+    let message;
+
+    if (menu) {
+        message =
+`Hola, requiero información sobre ${menu}. ¿Me das información?`;
+
+        if (price) {
+            message += ` Referencia: ${price}.`;
+        }
+    } else {
+        message = 'Hola, deseo hacer una reservación.';
+    }
+
+    const url =
+        'https://wa.me/' +
+        WHATSAPP_THOR +
+        '?text=' +
+        encodeURIComponent(message);
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+
+/* =========================
+   OPEN BAR
+========================= */
+
+function openBarQuote(type) {
+
+    const message =
+        `Hola, deseo información sobre el servicio Open Bar ${type}. ¿Me das información?`;
+
+    const url =
+        'https://wa.me/' +
+        WHATSAPP_THOR +
+        '?text=' +
+        encodeURIComponent(message);
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+
+/* =========================
+   GALERÍA AMPLIABLE
+========================= */
+
+function openGalleryImage(element) {
+
+    const thumbnail = element.querySelector('img');
+    const lightbox = document.getElementById('galleryLightbox');
+    const expanded = document.getElementById('galleryExpandedImage');
+
+    if (!thumbnail || !lightbox || !expanded) return;
+
+    expanded.src = thumbnail.src;
+    expanded.alt = thumbnail.alt;
+
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+
+    document.body.style.overflow = 'hidden';
+}
+
+function closeGalleryImage() {
+
+    const lightbox = document.getElementById('galleryLightbox');
+
+    if (!lightbox) return;
+
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+
+    document.getElementById('galleryExpandedImage').src = '';
+
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(event) {
+
+    if (event.key === 'Escape') {
+        closeGalleryImage();
+    }
+
+});
