@@ -722,39 +722,21 @@ footer {
     transition-duration: .01ms !important;
   }
 }
-
-/* THOR — Menu photo buttons */
-.menu-tab-group {
+/* THOR: foto dentro del encabezado del menú */
+.menu-tabs .menu-tab {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    min-width: 0;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-.menu-tab-group .menu-tab {
-    width: 100%;
-}
-
-.menu-tab-group .menu-photo {
-    display: block;
-    width: 100%;
-    max-width: 240px;
-    height: 150px;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    background: var(--surface);
-    cursor: zoom-in;
-}
-
-.menu-tab-group .menu-photo img {
-    display: block;
-    width: 100%;
-    height: 100%;
+.menu-tabs .menu-tab-photo {
+    width: 44px;
+    height: 44px;
     object-fit: cover;
-}  
+    border-radius: 6px;
+    flex-shrink: 0;
+}
 </style>
 </head>
 
@@ -847,42 +829,37 @@ footer {
       </div>
     </div>
 
-  <div class="menu-tabs reveal">
+<div class="menu-tabs reveal">
 
-  <div class="menu-tab-group">
-    <button class="menu-tab active" onclick="showMenu('canapes',this)">🫙 Canapés</button>
-    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
-      <img src="images/menu-canapes.jpg" alt="Canapés">
-    </button>
-  </div>
+  <button class="menu-tab active" onclick="showMenu('canapes',this)">
+    <span>🫙 Canapés</span>
+    <img class="menu-tab-photo" src="images/menu-canapes.jpg" alt=""
+         onerror="this.style.display='none'">
+  </button>
 
-  <div class="menu-tab-group">
-    <button class="menu-tab" onclick="showMenu('italiano',this)">🍕 Auténtico Italiano</button>
-    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
-      <img src="images/menu-italiano.jpg" alt="Auténtico Italiano">
-    </button>
-  </div>
+  <button class="menu-tab" onclick="showMenu('italiano',this)">
+    <span>🍕 Auténtico Italiano</span>
+    <img class="menu-tab-photo" src="images/menu-italiano.jpg" alt=""
+         onerror="this.style.display='none'">
+  </button>
 
-  <div class="menu-tab-group">
-    <button class="menu-tab" onclick="showMenu('churrasco',this)">🥩 Grill Churrasquería</button>
-    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
-      <img src="images/menu-churrasqueria.jpg" alt="Grill Churrasquería">
-    </button>
-  </div>
+  <button class="menu-tab" onclick="showMenu('churrasco',this)">
+    <span>🥩 Grill Churrasquería</span>
+    <img class="menu-tab-photo" src="images/menu-churrasqueria.jpg" alt=""
+         onerror="this.style.display='none'">
+  </button>
 
-  <div class="menu-tab-group">
-    <button class="menu-tab" onclick="showMenu('mexicano',this)">🌮 Fiesta Mexicana</button>
-    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
-      <img src="images/menu-mexicano.jpg" alt="Fiesta Mexicana">
-    </button>
-  </div>
+  <button class="menu-tab" onclick="showMenu('mexicano',this)">
+    <span>🌮 Fiesta Mexicana</span>
+    <img class="menu-tab-photo" src="images/menu-mexicano.jpg" alt=""
+         onerror="this.style.display='none'">
+  </button>
 
-  <div class="menu-tab-group">
-    <button class="menu-tab" onclick="showMenu('bbq',this)">🔥 Texas BBQ</button>
-    <button class="menu-photo" type="button" onclick="openGalleryImage(this)">
-      <img src="images/menu-bbq.jpg" alt="Texas BBQ">
-    </button>
-  </div>
+  <button class="menu-tab" onclick="showMenu('bbq',this)">
+    <span>🔥 Texas BBQ</span>
+    <img class="menu-tab-photo" src="images/menu-bbq.jpg" alt=""
+         onerror="this.style.display='none'">
+  </button>
 
 </div>
 
